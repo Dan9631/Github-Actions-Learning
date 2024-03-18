@@ -18,7 +18,7 @@ jobs:
   build:
     
     env: 
-      platform: aws
+      platform: azure
       region: us-east-1
       account: 123456789012
     # The type of runner that the job will run on
@@ -35,3 +35,6 @@ jobs:
             echo "Esto es el valor de plartform: ${{env.platform}}"
             echo "Region: ${{env.region}}"
             echo "Account: ${{env.account}}"
+       - name: "Mostrar variables de entorno"
+         run: |
+            echo "Evento: ${{toJSON(github.event)}}"
